@@ -1,15 +1,10 @@
-const categoriesEl = document.querySelector('#categories');
+const patentEl = document.querySelector('#categories');
+console.log(`У списку ${patentEl.children.length} категорії;`);
 
-const productEl = categoriesEl.querySelectorAll('h2');
-console.log('Quantity of categories: ', productEl.length);
-
-for (let i = 0; i < productEl.length; i += 1) {
-  console.log(`${i + 1}. Category: ${productEl[i].textContent};`);
-}
-
-const quantityEl = document.querySelectorAll('.item');
-
+const quantityEl = patentEl.children;
 for (let i = 0; i < quantityEl.length; i += 1) {
-  const elm = quantityEl[i].querySelectorAll('li');
-  console.log(`${i + 1}. Quantity elements: ${elm.length};`);
+  console.log(
+    `Категорія: ${quantityEl[i].firstElementChild.textContent}, \
+Кількість елементів: ${quantityEl[i].lastElementChild.children.length}; `,
+  );
 }
